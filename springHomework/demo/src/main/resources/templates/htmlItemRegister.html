@@ -10,11 +10,14 @@
 
         var form = $('#itemRegister');
 
-        $('#btnItemList').click(function(){
+        $('#btnItemReg').click(function(){
             form.attr("method", "post");
-            form.attr("action", '/itemregister');
+            form.attr("action", 'postitemRegister');
             form.submit();
         });
+         $("#btnItemList").on("click", function() {
+            self.location = "itemList";
+         });
     });
 </script>
 <body>
@@ -36,14 +39,23 @@
         <tr>
             <td>Item Price</td>
             <td>
-                <input type="text" name="price" />
+                <input type="int" name="price" />
             </td>
         </tr>
+        <tr>
+            <td>Item Detail</td>
+            <td>
+                <input type="text" name="ex" />
+            </td>
+        </tr>
+
     </table>
 </form>
 <br>
 <div>
-    <button id="btnItemList">등록하기</button>
+    <button id="btnItemList">List</button>
+    <button id="btnItemReg">등록하기</button>
+
 
 </div>
 </body>

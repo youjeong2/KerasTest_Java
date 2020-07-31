@@ -31,7 +31,7 @@ public class ItemManiaController {
     }
 
     @PostMapping("/")
-    public String moveRegister (String id, String pw, String nickname){
+    public String moveRegister (String id, String pw, String nickname) throws Exception {
         log.info("moveRegister()");
 //        log.info("id : " + id);
 //        log.info("pw : " + pw);
@@ -62,13 +62,4 @@ public class ItemManiaController {
 
         return "htmlItemList";
     }
-    @PostMapping("/itemregister")
-    public String itemRegister //(String id, String name, String price)
-                                                     throws Exception {
-        log.info("itemRegister()");
-        service.itemRegister(id, name, price);
-
-        return "htmlItemRegister";
-    }
-
 }

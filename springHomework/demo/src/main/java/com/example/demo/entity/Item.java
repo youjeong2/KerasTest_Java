@@ -1,31 +1,40 @@
 package com.example.demo.entity;
-// 회원정보
+
 public class Item {
-    private int boardNo;
+    private int Item_no;
     private String id;
-    private String pw;
+    private String name;
+    private int price;
+    private String ex;
 
-    public int getBoardNo() {
-        return boardNo;
-    }
+    public int getItemNo() { return Item_no; }
+    public void setItemNo(int Item_no) { this.Item_no = Item_no; }
 
-    public void setBoardNo(int boardNo) {
-        this.boardNo = boardNo;
-    }
-
-    public String getid() {
+    public String getId() {
         return id;
     }
 
-    public void setid(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getpw() {
-        return pw;
+    public String getName() {
+        return name;
     }
 
-    public void setpw(String pw) {
-        this.pw = pw;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getEx() { return ex; }
+
+    public void setEx(String ex) { this.ex = ex; }
 }

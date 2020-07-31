@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.ItemManiaController;
+import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemMania;
 import com.example.demo.repository.SignupRepo;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SignupServiceImpl implements SignupService{
+public class SignupServiceImpl implements SignupService {
 
     static final Logger log =
             LoggerFactory.getLogger(SignupServiceImpl.class);
@@ -24,6 +24,11 @@ public class SignupServiceImpl implements SignupService{
         log.info("signupInfo");
         repo.signupInfo(id, pw, nick);
     }
+    @Override
+    public List<ItemMania> list() throws Exception {
+        return null;
+    }
+
 //    @Override
 //    public List<ItemMania> list() throws Exception {
 //        //return SignupRepo.list();

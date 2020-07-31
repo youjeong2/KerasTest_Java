@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,7 +12,7 @@
             location.href = '/myinfo?';
         });
         $('#btnItemReg').click(function(){
-            location.href = '/itemregister?';
+            location.href = '/getitemRegister?';
 
         });
      });
@@ -21,13 +21,17 @@
 <body>
 <h1>아이템 리스트</h1>
 <form id="itemList">
-    <table>
-        <table border="1">
+    <table border="1">
         <tr>
             <th align="center" width="80">No</th>
-            <th align="center" width="80">Title</th>
-            <th align="center" width="80">Writer</th>
-            <th align="center" width="80">Regdate</th>
+            <th align="center" width="80">NAME</th>
+            <th align="center" width="80">PRICE</th>
+        </tr>
+        <tr th:each="item: ${list}">
+            <th align="center" th:text="${item.itemNo}" width="80">${item.itemNo}</th>
+            <th align="center" th:text="${item.name}" width="80">${item.name}</th>
+            <th align="center" th:text="${item.price}" width="80">${item.price}</th>
+
         </tr>
     </table>
 </form>
@@ -35,7 +39,6 @@
 <div>
     <button id="btnMyInfo">내정보</button>
     <button id="btnItemReg">아이템등록</button>
-
 </div>
 </body>
 </html>
