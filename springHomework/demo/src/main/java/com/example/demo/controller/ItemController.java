@@ -20,14 +20,6 @@ public class ItemController {
     @Autowired
     private ItemService service;
 
-    @GetMapping("/itemList")
-    public String itemList (Item item, Model model)
-            throws Exception {
-        log.info("itemList()");
-        model.addAttribute("list", service.list());
-        return "htmlItemList";
-    }
-
     @GetMapping("/getitemRegister")
     public String getitemRegister (Item item, Model model)
                                                      throws Exception {
@@ -40,10 +32,15 @@ public class ItemController {
             throws Exception {
         log.info("postitemRegister()");
         service.ItemRegister(item);
-        model.addAttribute("msg", "Register Success");
+        model.addAttribute("msg", "Register Success!");
         return "htmlItemSuccess";
     }
 
-
+    @PostMapping("/itemList")
+    public String itemList (Item item, Model model) throws Exception {
+        log.info("itemList()");
+        model.addAttribute("list", service.list());
+        return "htmlItemList";
+    }
 
 }
