@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Item;
+import com.example.demo.entity.ItemMania;
 import com.example.demo.service.SignupService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +25,20 @@ public class ItemManiaController {
 
         return "htmlMain";
     }
-    @GetMapping("/signup")
-    public String moveSignUp(){
+    @GetMapping("/getsignup")
+    public String getSignUp(){
         log.info("moveSignUp()");
 
         return "htmlSignUp";
+    }
+
+    @PostMapping ("/postsignup")
+    public String postiSignUp (ItemMania itemMania, Model model)
+            throws Exception {
+        log.info("postiSignUp()");
+         // service.signupInfo(itemMania);
+        model.addAttribute("msg", "SignUp Success!");
+        return "htmlSignUpSuccess";
     }
 
     @PostMapping("/")
@@ -41,13 +52,13 @@ public class ItemManiaController {
         return "htmlMain";
     }
 
-    @GetMapping("/list")
-    public String movelist (Model model) throws Exception {
-        log.info("list()");
-        //model.addAttribute("list", service.list());
+//    @PostMapping("/itemList")
+//    public String itemList (Item item, Model model) throws Exception {
+//        log.info("itemList()");
+//        model.addAttribute("list", service.list());
+//        return "htmlItemList";
+//    }
 
-        return "htmlItemList";
-    }
     @GetMapping("/myinfo")
     public String moveMyInfo (Model model) throws Exception {
         log.info("myinfo()");
@@ -55,11 +66,5 @@ public class ItemManiaController {
 
         return "htmlMyItem";
     }
-    @GetMapping("/itemlist")
-    public String moveItemList (Model model) throws Exception {
-        log.info("moveItemList()");
-        //model.addAttribute("list", service.list());
-
-        return "htmlItemList";
-    }
 }
+

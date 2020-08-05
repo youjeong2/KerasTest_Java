@@ -24,13 +24,10 @@ public class SignupServiceImpl implements SignupService {
         log.info("signupInfo");
         repo.signupInfo(id, pw, nick);
     }
+
     @Override
     public List<ItemMania> list() throws Exception {
         return null;
     }
 
-//    @Override
-//    public List<ItemMania> list() throws Exception {
-//        //return SignupRepo.list();
-//    }
 }

@@ -24,12 +24,12 @@
     <table border="1">
         <tr>
             <th align="center" width="80">No</th>
-            <th align="center" width="80">NAME</th>
+            <th align="center" width="80">ID</th>
             <th align="center" width="80">PRICE</th>
         </tr>
-        <tr th:each="item: ${list}">
+        <tr th:each="item:${list}">
             <th align="center" th:text="${item.itemNo}" width="80">${item.itemNo}</th>
-            <th align="center" th:text="${item.name}" width="80">${item.name}</th>
+            <th align="center" th:text="${item.id}" width="80">${item.id}</th>
             <th align="center" th:text="${item.price}" width="80">${item.price}</th>
 
         </tr>

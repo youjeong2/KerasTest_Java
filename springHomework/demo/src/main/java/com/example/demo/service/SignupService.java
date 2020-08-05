@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemMania;
 
 import java.util.List;

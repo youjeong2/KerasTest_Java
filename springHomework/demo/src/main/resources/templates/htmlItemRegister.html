@@ -16,9 +16,14 @@
             form.submit();
         });
          $("#btnItemList").on("click", function() {
-            self.location = "itemList";
+            location.href = '/itemList';
+            form.attr("action", "itemList");
+            form.attr("method", "post");
+
+            form.submit();
          });
     });
+
 </script>
 <body>
 <h1>아이템 등록</h1>
